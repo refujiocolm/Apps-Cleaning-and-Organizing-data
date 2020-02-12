@@ -27,10 +27,10 @@ print(ios_header)
 print(android_header)
 
 
-# I print both my headers just to check that my code is working properly with no issues
+I print both my headers just to check that my code is working properly with no issues
 
 
-# In the following funcation was made pickout a data slice from a data set and  prints each row rowof the dataset with a space after each row we added an true or false statement to print the header of rows and columns in a data set if there is a header if there is one (if true)
+In the following funcation was made pickout a data slice from a data set and  prints each row rowof the dataset with a space after each row we added an true or false statement to print the header of rows and columns in a data set if there is a header if there is one (if true)
 
 def explore_data(dataset, start, end, rows_and_columns=False):
     dataset_slice = dataset[start:end]    
@@ -43,7 +43,7 @@ def explore_data(dataset, start, end, rows_and_columns=False):
         print('Number of columns:', len(dataset[0]))
         print('\n')
 
-# We used our exploredata() fucntion to retrieve the headers and a small slice of our google and apple data sets
+We used our exploredata() fucntion to retrieve the headers and a small slice of our google and apple data sets
 
 print(ios_header)
 print('\n')     
@@ -53,9 +53,9 @@ print(android_header)
 print('\n')
 explore_data(android,0, 3, True)
 
-# we were asked to find a row that didnt belong and one of the hints that we got was to check to see if one of our rows was missing a category from one of the columns
+we were asked to find a row that didnt belong and one of the hints that we got was to check to see if one of our rows was missing a category from one of the columns
 
-# I used a for loop to help me find the row that was missing a category by counting the number of elements in each row and printing whatever row had less elements
+I used a for loop to help me find the row that was missing a category by counting the number of elements in each row and printing whatever row had less elements
 
 dup = []
 for rows in android:
@@ -64,7 +64,7 @@ for rows in android:
         print(rows)
         
         
-# knowing what that row contains then led me to run another for loop to finding the index of this element in the data set and then deleting it. I created a list to number off each row, from there i just added eavery row from the android list to it. I then used this for loop after to find the row that conatined the app name in android[0], which in turn returned a number that i had added in my list numm[]. I was able to find my index this way to know what row to delete that had missing data. 
+knowing what that row contains then led me to run another for loop to finding the index of this element in the data set and then deleting it. I created a list to number off each row, from there i just added eavery row from the android list to it. I then used this for loop after to find the row that conatined the app name in android[0], which in turn returned a number that i had added in my list numm[]. I was able to find my index this way to know what row to delete that had missing data. 
 
 numm=[]
 num = 0
@@ -77,15 +77,15 @@ for rows in numm:
     if "Life Made" in rows: 
         print(rows)
 
-# In the following two for loops we are able to filter out duplicates to know if there are certain rows in our android data set that we have to get rid of. By creating a seperate dataset, we are able to loop through the dataset and place all duplicates in this new data set which we can know use to delete the duplicates.
+In the following two for loops we are able to filter out duplicates to know if there are certain rows in our android data set that we have to get rid of. By creating a seperate dataset, we are able to loop through the dataset and place all duplicates in this new data set which we can know use to delete the duplicates.
 
 for app in android:
     name = app[0]
     if name == 'Instagram':
         print(app)
         
-# We can find some fo the dpulicates here. We printed 15 rows of app names to know what apps we are looking at, and to verify that there are some 
-# Another thing that was done with the following piece of code is making sure that we can keepp only one of the apps in the data set by also filtering out the highest amount of reviews from the duplicates and using a dictionary to keep only the apps that are in the data set once
+We can find some fo the dpulicates here. We printed 15 rows of app names to know what apps we are looking at, and to verify that there are some 
+Another thing that was done with the following piece of code is making sure that we can keepp only one of the apps in the data set by also filtering out the highest amount of reviews from the duplicates and using a dictionary to keep only the apps that are in the data set once
                      
         
 duplicate_apps = []
@@ -117,7 +117,7 @@ for app in android:
 print('Expected length:', len(android) - 1181)
 print('Actual length:', len(reviews_max))
 
-# Here is where we took out duplicate apps with the same amount of reviews, making sure to focuse on only having one app with one name
+Here is where we took out duplicate apps with the same amount of reviews, making sure to focuse on only having one app with one name
 
 android_clean = []
 already_added = []
@@ -131,12 +131,12 @@ if (reviews_max[name] == n_reviews) and (name not in already_added):
         already_added.append(name)
 
 
-# All we are doing here is looking at some rows using our explore function
+All we are doing here is looking at some rows using our explore function
 
 explore_data(android_clean, 0, 3, True)
 
 
-# the following two pieces of code extracted the english apps from both the apple and google apps. we used this function to then show you a couple of rows of what was extracted to make sure no other characters were present. 
+the following two pieces of code extracted the english apps from both the apple and google apps. we used this function to then show you a couple of rows of what was extracted to make sure no other characters were present. 
 
 def english_characters(string):
     non_ascii = 0
@@ -168,7 +168,7 @@ explore_data(eng_android, 0, 3, True)
 print('\n')
 explore_data(eng_ios, 0, 3, True)
 
-# This last step is to clear out the free apps from the non-free apps
+This last step is to clear out the free apps from the non-free apps
 
 android_final = []
 ios_final = []
@@ -186,7 +186,7 @@ for app in eng_ios:
 print(len(android_final))
 print(len(ios_final))
 
-# we have finished sorting out, english apps, free apps, inaccurate data, and duplicate data from the data sets, but to make sure that we get the most from the information we have we are going to also look at genres and the success rate measured by numbers in reviews and downloads on both platforms. This is to ensure that everyone gets the most out of the the app overall
+we have finished sorting out, english apps, free apps, inaccurate data, and duplicate data from the data sets, but to make sure that we get the most from the information we have we are going to also look at genres and the success rate measured by numbers in reviews and downloads on both platforms. This is to ensure that everyone gets the most out of the the app overall
 
 def freq_table(data_set, index):
     frequency_table = {}
@@ -232,4 +232,26 @@ for genre in genres_ios:
     avg_n_ratings = total / len_genre
     print(genre, ':', avg_n_ratings)
     
-    After going
+After going through and consolidating totals for each genre we were able to come up with a function that will return the Percentage
+of each item in a cloumn as well as the Avg ratings which is needed to look for popularity amongst genres.
+
+
+Apart from reviews. we do look at the number of installs the app has, this helps narrow down even more, the success rate of an app. 
+
+categories_android = freq_table(android_final, 1)
+
+for category in categories_android:
+    total = 0
+    len_category = 0
+    for app in android_final:
+        category_app = app[1]
+        if category_app == category:            
+            n_installs = app[5]
+            n_installs = n_installs.replace(',', '')
+            n_installs = n_installs.replace('+', '')
+            total += float(n_installs)
+            len_category += 1
+    avg_n_installs = total / len_category
+    print(category, ':', avg_n_installs)
+
+At this point we can review different slices and lists with the functions that we have created. W are able to now look at a wider array of data that will show us what is getting downloaded, how many times, the avg reviews, what genr and cetagory that they fall under and all without duplicates, non-english, non_free, and errors. 
